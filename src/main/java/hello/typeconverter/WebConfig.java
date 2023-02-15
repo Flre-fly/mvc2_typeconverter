@@ -9,9 +9,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addFormatters(FormatterRegistry registry) {
-        registry.addConverter(new StringToIntegerConverter());
-        registry.addConverter(new IntegerToStringConverter());
         registry.addConverter(new StringToIpPortConverter());
         registry.addConverter(new IpPortToStringConverter());
+        registry.addFormatter(new MyNumberFormatter());
     }
 }
